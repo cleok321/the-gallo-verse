@@ -320,6 +320,13 @@ count_sebast = 0
 
 #_-----------------
 
+circle_x_chk = 40
+circle_y_chk = 40
+circle_a_chk = 40
+circle_b_chk = 40
+
+# -----------------
+
 running = True
 while running:
     # GALLO VERSE SPECIFIC ----------------------------------------------------------------
@@ -1326,10 +1333,129 @@ while running:
     pygame.draw.ellipse(screen, (255, 255, 207), [(x + 222, y + eye_c_rhee), (12, eye_d_rhee)])
     pygame.draw.ellipse(screen, (255, 255, 207), [(x + 244, y + eye_c_rhee), (12, eye_d_rhee)])
     pygame.draw.polygon(screen, (46, 46, 41), [(x + 226, y + 185), (x + 232, y + 170), (x + 240, y + 165), (x + 248, y + 170), (x + 254, y + 185), (x + 240, y + 188)])
- 
-    
+
+    # CHLOE ----------------------------------------------------------------------------------
+
+    x = 1920
+    y = 2400
+    width = 640
+    height = 480
+
+    circle_x_chk += 1
+    circle_a_chk += 2
+    circle_b_chk += 1
+
+    pygame.draw.rect(screen, (7, 26, 102), (x, y, width, height))
+
+    # cloud
+    # Must draw with reference to that coordinate
+
+    cloud_ptone = pygame.draw.ellipse(screen, ("WHITE"), (x + 50 + circle_x_chk, y + 37 + circle_y_chk, 110, 30))
+    cloud_pttwo = pygame.draw.ellipse(screen, ("WHITE"), (x + 68 + circle_x_chk, y + 25 + circle_y_chk, 35, 35))
+    cloud_ptthree = pygame.draw.ellipse(screen, ("WHITE"), (x + 95 + circle_x_chk, y + 18 + circle_y_chk, 50, 50))
+    if circle_x_chk > 640:
+        circle_x_chk = -40
+    # falling snow
+    pygame.draw.circle(screen, "WHITE", (x + 122 + circle_x_chk, y + 117 + circle_a_chk), 6)
+    pygame.draw.circle(screen, "WHITE", (x + 143 + circle_x_chk, y + 155 + circle_b_chk), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 181 + circle_x_chk, y + 206 + circle_a_chk), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 140 + circle_x_chk, y + 229 + circle_b_chk), 6)
+    pygame.draw.circle(screen, "WHITE", (x + 102 + circle_x_chk, y + 146 + circle_a_chk), 6)
+    pygame.draw.circle(screen, "WHITE", (x + 101 + circle_x_chk, y + 175 + circle_b_chk), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 122 + circle_x_chk, y + 228 + circle_a_chk), 6)
+
+    if circle_a_chk > 460:
+        circle_a_chk = -40
+    if circle_b_chk > 480:
+        circle_b_chk = -40
+    # snow
+    pygame.draw.circle(screen, "WHITE", (x + 43, y + 55), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 33, y + 167), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 117, y + 157), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 85, y + 134), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 104, y + 104), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 311, y + 41), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 285, y + 135), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 204, y + 201), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 145, y + 201), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 174, y + 281), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 308, y + 209), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 389, y + 98), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 388, y + 273), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 387, y + 188), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 355, y + 220), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 383, y + 145), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 307, y + 72), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 492, y + 72), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 462, y + 163), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 451, y + 128), 5)
+    pygame.draw.circle(screen, "WHITE", (x + 455, y + 241), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 552, y + 162), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 519, y + 299), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 374, y + 306), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 161, y + 41), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 244, y + 47), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 181, y + 101), 4)
+    pygame.draw.circle(screen, "WHITE", (x + 40, y + 256), 4)
+    # snowman
+    pygame.draw.ellipse(screen, "WHITE", [70 + x, 210 + y, 40, 40])
+    pygame.draw.ellipse(screen, "WHITE", [57 + x, 235 + y, 65, 65])
+    pygame.draw.ellipse(screen, "WHITE", [40 + x, 270 + y, 100, 100])
+    pygame.draw.circle(screen, "BLACK", (x + 80, y + 225), 1)
+    pygame.draw.circle(screen, "BLACK", (x + 95, y + 223), 1)
+    pygame.draw.polygon(screen, "ORANGE", [(x + 87, y + 228), (x + 87, y + 231), (x + 96, y + 229)])
+    pygame.draw.circle(screen, "GREY", (x + 87, y + 257), 5)
+    pygame.draw.circle(screen, "GREY", (x + 88, y + 272), 5)
+    pygame.draw.circle(screen, "GREY", (x + 91, y + 296), 5)
+    pygame.draw.rect(screen, ("RED"), (x + 65, y + 236, 50, 10))
+    pygame.draw.rect(screen, ("RED"), (x + 66, y + 246, 7, 80))
+
+    # ground
+    pygame.draw.rect(screen, (242, 250, 253), (x + 0.1, y + 355, width, 125))
+
+    # gingerbread house
+    pygame.draw.rect(screen, (182, 129, 98), (x + 360, y + 190, 230, 180))
+    pygame.draw.polygon(screen, (134, 75, 42), [(x + 403, y + 105), (x + 547, y + 105), (x + 341, y + 203), (x + 617, y + 203)])
+    pygame.draw.polygon(screen, (134, 75, 42), [(x + 403, y + 105), (x + 474, y + 139), (x + 341, y + 203)])
+    pygame.draw.polygon(screen, (134, 75, 42), [(x + 403, y + 105), (x + 474, y + 137), (x + 341, y + 203)])
+    pygame.draw.polygon(screen, (134, 75, 42), [(x + 547, y + 106), (x + 477, y + 139), (x + 616, y + 203)])
+    pygame.draw.rect(screen, (152, 95, 63), (x + 465, y + 271, 45, 100))
+    pygame.draw.ellipse(screen, ("WHITE"), [x + 390, y + 280, 50, 7])
+    pygame.draw.ellipse(screen, ("WHITE"), [x + 530, y + 280, 50, 7])
+    pygame.draw.rect(screen, ("WHITE"), (x + 397.5, y + 241, 35, 40))
+    pygame.draw.ellipse(screen, "WHITE", [x + 397.5, y + 233, 35, 40])
+    pygame.draw.rect(screen, ("WHITE"), (x + 536, y + 241, 35, 40))
+    pygame.draw.ellipse(screen, "WHITE", [x + 536, y + 233, 35, 40])
+    pygame.draw.rect(screen, (246, 226, 160), (x + 542.5, y + 244, 25, 30))
+    pygame.draw.rect(screen, (246, 226, 160), (x + 402.5, y + 244, 25, 30))
+    pygame.draw.line(screen, ("WHITE"), (x + 413, y + 241), (x + 413, y + 279))
+    pygame.draw.line(screen, ("WHITE"), (x + 554, y + 240), (x + 554, y + 277))
+    pygame.draw.line(screen, ("WHITE"), (x + 398, y + 263), (x + 428, y + 263))
+    pygame.draw.line(screen, ("WHITE"), (x + 538, y + 262), (x + 568, y + 262))
+    pygame.draw.circle(screen, (182, 129, 98), (x + 477, y + 296), 1)
+    pygame.draw.circle(screen, (182, 129, 98), (x + 499, y + 296), 1)
+    pygame.draw.circle(screen, (182, 129, 98), (x + 486, y + 323), 1)    
+    pygame.draw.circle(screen, (182, 129, 98), (x + 477, y + 354), 1)
+    pygame.draw.circle(screen, (182, 129, 98), (x + 500, y + 354), 1)
+    pygame.draw.circle(screen, (182, 129, 98), (x + 500, y + 354), 1)
+    pygame.draw.arc(screen, ("WHITE"), [x + 361, y + 146, 50, 50], 3.141592, 3.141592 * 2, 3)
+    pygame.draw.arc(screen, ("WHITE"), [x + 413, y + 146, 50, 50], 3.141592, 3.141592 * 2, 3)
+    pygame.draw.arc(screen, ("WHITE"), [x + 513, y + 146, 50, 50], 3.141592, 3.141592 * 2, 3)
+    pygame.draw.arc(screen, ("WHITE"), [x + 461, y + 146, 50, 50], 3.141592, 3.141592 * 2, 3)
+    pygame.draw.arc(screen, ("WHITE"), [x + 550, y + 146, 50, 50], 3.141592, 3.141592 * 2, 3)
+    pygame.draw.circle(screen, ("RED"), (x + 410, y + 167), 5)
+    pygame.draw.circle(screen, ("GREEN"), (x + 462, y + 163), 5)
+    pygame.draw.circle(screen, ("RED"), (x + 510, y + 168), 5)
+    pygame.draw.circle(screen, ("GREEN"), (x + 363, y + 168), 5)
+    pygame.draw.circle(screen, ("RED"), (x + 594, y + 170), 5)
+    pygame.draw.arc(screen, ("WHITE"), [x + 390, y + 100, 70, 50], 3.141592, 3.141592 * 2, 5)
+    pygame.draw.arc(screen, ("WHITE"), [x + 450, y + 100, 70, 50], 3.141592, 3.141592 * 2, 5)
+    pygame.draw.arc(screen, ("WHITE"), [x + 500, y + 100, 70, 50], 3.141592, 3.141592 * 2, 5)
+    pygame.draw.arc(screen, ("DARK GREEN"), [x + 474, y + 255, 30, 30], 0, 3.141592 * 2, 7)
+
     # ----------------------------------------------------------------------------------------
 
+    
     # Must have these coordinates
     x = 1920
     y = 1440
